@@ -76,9 +76,13 @@ table {
     
 
 }
-
-
+#divOne{
+    vertical-align: middle;
+    text-align: right;
+}
 #divTwo{
     text-decoration: underline;
     padding-bottom: 10px;
+    vertical-align: middle;
+    text-align: right;
 }

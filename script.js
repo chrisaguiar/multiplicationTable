@@ -95,18 +95,53 @@ function generate_table3x8() {
         // Creating DIV
         let div = document.createElement("div");
         let divTwo = document.createElement("div");
-        // Setting both divs to correct text.
-        if(getRandomInt(2) == 0){
-          div.innerHTML = ("    " + randomOne);
-          divTwo.innerHTML = ("x  " + randomTwo);
-  
-        }
-        else{
-          div.innerHTML = ("    " + randomTwo);
-          divTwo.innerHTML = ("x  " + randomOne);
-  
-        }
+        div.setAttribute('id','divOne');
         divTwo.setAttribute('id','divTwo');
+        // Setting both divs to correct text.
+
+        let randomChance = getRandomInt(2);
+        console.log(randomChance);
+        if(randomChance == 0){
+          if(randomOne > 9 && randomTwo > 9){
+            div.innerHTML = (randomOne);
+            divTwo.innerHTML = ("x     " + randomTwo);
+          }
+          else if(randomOne > 9 && randomTwo <= 9){
+            div.innerHTML = (randomOne);
+            divTwo.innerHTML = ("x     " + randomTwo);
+          }
+          else if(randomOne <= 9 && randomTwo > 9){
+            div.innerHTML = (randomOne);
+            divTwo.innerHTML = ("x    " + randomTwo);
+          }
+          else{
+            div.innerHTML = (randomOne);
+            divTwo.innerHTML = ("x     " + randomTwo);
+          }
+  
+        }
+
+        else{
+          console.log("ran")
+          if(randomOne > 9 && randomTwo > 9){
+            div.innerHTML = (randomTwo);
+            divTwo.innerHTML = ("x     " + randomOne);
+          }
+          else if(randomOne > 9 && randomTwo <= 9){
+            div.innerHTML = (randomTwo);
+            divTwo.innerHTML = ("x     " + randomOne);
+          }
+          else if(randomOne <= 9 && randomTwo > 9){
+            div.innerHTML = (randomTwo);
+            divTwo.innerHTML = ("x    " + randomOne);
+          }
+          else{
+            div.innerHTML = (randomOne);
+            divTwo.innerHTML = ("x     " + randomTwo);
+          }
+
+        }
+        
         
         // Placing Divs on screen
         cell.appendChild(div);
