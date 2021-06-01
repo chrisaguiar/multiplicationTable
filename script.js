@@ -104,7 +104,7 @@ function generate_table3x8() {
         if(randomChance == 0){
           if(randomOne > 9 && randomTwo > 9){
             div.innerHTML = (randomOne);
-            divTwo.innerHTML = ("x     " + randomTwo);
+            divTwo.innerHTML = ("x    " + randomTwo);
           }
           else if(randomOne > 9 && randomTwo <= 9){
             div.innerHTML = (randomOne);
@@ -116,7 +116,7 @@ function generate_table3x8() {
           }
           else{
             div.innerHTML = (randomOne);
-            divTwo.innerHTML = ("x     " + randomTwo);
+            divTwo.innerHTML = ("x    " + randomTwo);
           }
   
         }
@@ -124,7 +124,7 @@ function generate_table3x8() {
         else{
           if(randomOne > 9 && randomTwo > 9){
             div.innerHTML = (randomTwo);
-            divTwo.innerHTML = ("x     " + randomOne);
+            divTwo.innerHTML = ("x    " + randomOne);
           }
           else if(randomOne > 9 && randomTwo <= 9){
             div.innerHTML = (randomTwo);
@@ -136,7 +136,7 @@ function generate_table3x8() {
           }
           else{
             div.innerHTML = (randomOne);
-            divTwo.innerHTML = ("x     " + randomTwo);
+            divTwo.innerHTML = ("x    " + randomTwo);
           }
 
         }
