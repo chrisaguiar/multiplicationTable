@@ -58,6 +58,7 @@ th, td {
     width: 150px;
     height: 35px;
     border: 2.25pt solid black;
+    white-space:pre;
 }
 
 table {
@@ -67,11 +68,17 @@ table {
 
 .fiveByFive{
     height:80px;
-    width: 80px;
-    padding-left: 2%;
-    padding-right: 2%;
-    padding-bottom: 3.35%;
+    width: 100px;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    padding-bottom: 3%;
     text-align: center;
-    text-decoration: underline;
+    
 
+}
+
+
+#divTwo{
+    text-decoration: underline;
+    padding-bottom: 10px;
 }
