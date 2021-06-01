@@ -122,7 +122,6 @@ function generate_table3x8() {
         }
 
         else{
-          console.log("ran")
           if(randomOne > 9 && randomTwo > 9){
             div.innerHTML = (randomTwo);
             divTwo.innerHTML = ("x     " + randomOne);
