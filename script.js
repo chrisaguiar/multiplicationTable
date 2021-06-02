@@ -3,7 +3,7 @@ function getRandomInt(max) {
   }
 
 // FUNCTION TO GENERATE 3x8 !! FUNCTION TO GENERATE 3x8 !! FUNCTION TO GENERATE 3x8 !! FUNCTION TO GENERATE 3x8 !! FUNCTION TO GENERATE 3x8 !! 
-function generate_table3x8() {
+function generate_tablethreeByEight() {
   if ($('#bigTable').length > 0) {
     let elementTwo = document.getElementById('bigTable');
     elementTwo.parentNode.removeChild(elementTwo);
@@ -30,17 +30,20 @@ function generate_table3x8() {
       let randomTwo = getRandomInt(13);
 
       let cell = document.createElement("td");
+      let input = document.createElement("input");
+      input.setAttribute('id','inputThreeByEight');
 
       if(getRandomInt(2) == 0){
-        cell.innerHTML = (randomOne + " x " + randomTwo + " =    ");
+        input.value = (randomOne + " x " + randomTwo + " =    ");
 
       }
 
       else{
-        cell.innerHTML = (randomTwo + " x " + randomOne + " =    ");
+        input.value = (randomTwo + " x " + randomOne + " =    ");
 
       }
       row.appendChild(cell);
+      cell.appendChild(input);
     }
     
     // add the row to the end of the table body
@@ -60,7 +63,7 @@ function generate_table3x8() {
 
 
   // FUNCTION TO GENERATE 5x5 !! FUNCTION TO GENERATE 5x5 !! FUNCTION TO GENERATE 5x5 !! FUNCTION TO GENERATE 5x5 !! FUNCTION TO GENERATE 5x5 !! 
-  function generate_table5x5() {
+  function generate_tablefiveByFive() {
 
     if ($('#smallTable').length > 0) {
       let element = document.getElementById('smallTable');
@@ -92,60 +95,63 @@ function generate_table3x8() {
         cell.className += "fiveByFive";
 
 
-        // Creating DIV
-        let div = document.createElement("div");
-        let divTwo = document.createElement("div");
-        div.setAttribute('id','divOne');
-        divTwo.setAttribute('id','divTwo');
-        // Setting both divs to correct text.
+        // Creating inputs
+        let input = document.createElement("input");
+        input.setAttribute('id','inputOne');
+        let breakMoment = document.createElement("br");
+        let inputTwo = document.createElement("input");
+        inputTwo.setAttribute('id','inputTwo');
+        // Setting both inputs to correct text.
 
         let randomChance = getRandomInt(2);
-        console.log(randomChance);
+
         if(randomChance == 0){
           if(randomOne > 9 && randomTwo > 9){
-            div.innerHTML = (randomOne);
-            divTwo.innerHTML = ("x    " + randomTwo);
+            input.value = (randomOne);
+            inputTwo.value = ("x " + randomTwo);
           }
           else if(randomOne > 9 && randomTwo <= 9){
-            div.innerHTML = (randomOne);
-            divTwo.innerHTML = ("x     " + randomTwo);
+            input.value = (randomOne);
+            inputTwo.value = ("x " + randomTwo);
           }
           else if(randomOne <= 9 && randomTwo > 9){
-            div.innerHTML = (randomOne);
-            divTwo.innerHTML = ("x    " + randomTwo);
+            input.value = (randomOne);
+            inputTwo.value = ("x " + randomTwo);
           }
           else{
-            div.innerHTML = (randomOne);
-            divTwo.innerHTML = ("x    " + randomTwo);
+            input.value = (randomOne);
+            inputTwo.value = ("x " + randomTwo);
           }
   
         }
 
         else{
           if(randomOne > 9 && randomTwo > 9){
-            div.innerHTML = (randomTwo);
-            divTwo.innerHTML = ("x    " + randomOne);
+            input.value = (randomTwo);
+            inputTwo.value = ("x " + randomOne);
           }
           else if(randomOne > 9 && randomTwo <= 9){
-            div.innerHTML = (randomTwo);
-            divTwo.innerHTML = ("x     " + randomOne);
+            input.value = (randomTwo);
+            inputTwo.value = ("x " + randomOne);
           }
           else if(randomOne <= 9 && randomTwo > 9){
-            div.innerHTML = (randomTwo);
-            divTwo.innerHTML = ("x    " + randomOne);
+            input.value = (randomTwo);
+            inputTwo.value = ("x " + randomOne);
           }
           else{
-            div.innerHTML = (randomOne);
-            divTwo.innerHTML = ("x    " + randomTwo);
+            input.value = (randomOne);
+            inputTwo.value = ("x " + randomTwo);
           }
 
         }
         
         
-        // Placing Divs on screen
-        cell.appendChild(div);
-        div.appendChild(divTwo);
+        // Placing inputs on screen
         row.appendChild(cell);
+        cell.appendChild(input);
+        cell.appendChild(breakMoment);
+        cell.appendChild(inputTwo);
+
       }
       
       // add the row to the end of the table body
