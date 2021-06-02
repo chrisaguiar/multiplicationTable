@@ -55,8 +55,8 @@ td {
 }
 
 th, td {
-    width: 150px;
-    height: 35px;
+    width: 170px;
+    height: 45px;
     border: 2.25pt solid black;
     white-space:pre;
 }
@@ -81,7 +81,7 @@ table {
     font-weight: bold;
     font-size: 24px;
     border:none;
-    width:85%;
+    width:100%;
 }
 
 #inputOne{
