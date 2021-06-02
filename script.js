@@ -1,6 +1,22 @@
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
   }
+
+  function findFirstRange(){
+    return document.getElementById("firstStart").value;
+  }
+  function findSecondRange(){
+    return document.getElementById("firstEnd").value;
+  }
+  function findThirdRange(){
+    return document.getElementById("secondStart").value;
+  }
+  function findFourthRange(){
+    return document.getElementById("secondEnd").value;
+  }
+
 
 // FUNCTION TO GENERATE 3x8 !! FUNCTION TO GENERATE 3x8 !! FUNCTION TO GENERATE 3x8 !! FUNCTION TO GENERATE 3x8 !! FUNCTION TO GENERATE 3x8 !! 
 function generate_tablethreeByEight() {
@@ -26,14 +42,14 @@ function generate_tablethreeByEight() {
       // Create a <td> element and a text node, make the text
       // node the contents of the <td>, and put the <td> at
       // the end of the table row
-      let randomOne = getRandomInt(13);
-      let randomTwo = getRandomInt(13);
+      let randomOne = getRandomInt(findFirstRange(), findSecondRange());
+      let randomTwo = getRandomInt(findThirdRange(), findFourthRange());
 
       let cell = document.createElement("td");
       let input = document.createElement("input");
       input.setAttribute('id','inputThreeByEight');
 
-      if(getRandomInt(2) == 0){
+      if(getRandomInt(0,1) == 0){
         input.value = (randomOne + " x " + randomTwo + " =    ");
 
       }
@@ -88,8 +104,8 @@ function generate_tablethreeByEight() {
         // Create a <td> element and a text node, make the text
         // node the contents of the <td>, and put the <td> at
         // the end of the table row
-        let randomOne = getRandomInt(13);
-        let randomTwo = getRandomInt(13);
+        let randomOne = getRandomInt(findFirstRange(), findSecondRange());
+        let randomTwo = getRandomInt(findThirdRange(), findFourthRange());
 
         let cell = document.createElement("td");
         cell.className += "fiveByFive";
@@ -103,9 +119,7 @@ function generate_tablethreeByEight() {
         inputTwo.setAttribute('id','inputTwo');
         // Setting both inputs to correct text.
 
-        let randomChance = getRandomInt(2);
-
-        if(randomChance == 0){
+        if(getRandomInt(0,1) == 0){
           if(randomOne > 9 && randomTwo > 9){
             input.value = (randomOne);
             inputTwo.value = ("x " + randomTwo);
@@ -139,8 +153,8 @@ function generate_tablethreeByEight() {
             inputTwo.value = ("x " + randomOne);
           }
           else{
-            input.value = (randomOne);
-            inputTwo.value = ("x " + randomTwo);
+            input.value = (randomTwo);
+            inputTwo.value = ("x " + randomOne);
           }
 
         }
